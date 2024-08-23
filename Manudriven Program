@@ -1,0 +1,38 @@
+#Manudrive program to count the number of words in the entered string,count the number of words with three or more characters in the entered string and To count the number of words with first letter capital in the entered string.
+
+while True:
+
+    print("Welcome")
+    print("Press 1 To count the number of words in the entered string.")
+    print("Press 2 To count the number of words with three or more characters in the entered string.")
+    print("Press 3 To count the number of words with first letter capital in the entered string.")
+    print("Press 4 To Exit")
+
+    cho = int(input("Enter Your Choice: "))
+    
+    if cho == 4:
+        print("Bye Bye")
+        break
+    
+    sg = input("Enter The String: ")
+    words = sg.split()  
+
+    if cho == 1:
+        print("Number of words in the string:", len(words))
+
+    elif cho == 2:
+        s = 0
+        for word in words:
+            if len(word) >= 3:
+                s += 1
+        print("The number of words with three or more characters in the entered string are:", s)
+
+    elif cho == 3:
+        s = 0
+        for word in words:
+            if word.istitle(): 
+                s += 1
+        print("The number of words with first letter capital in the entered string are:", s)
+
+    else:
+        print("Wrong Choice")
